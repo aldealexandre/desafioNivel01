@@ -8,6 +8,7 @@
             nomeCompleto();
             cacular();
             quantidadeCaracteres();
+            placaVeiculo();
 
 
 
@@ -64,9 +65,35 @@
         public static void placaVeiculo()
         {
             Console.WriteLine("Consulta Placa\n");
-            Console.WriteLine("Digite a placa do veículo (formato ABC-1234): ");
-            string? placa = Console.ReadLine();
-            
+            Console.WriteLine("Digite a placa do veículo (formato ABC1234): ");
+            string? placa = Console.ReadLine()?.Trim();
+            if(string.IsNullOrEmpty(placa))
+            {
+                Console.WriteLine("Entrada vazia!");
+            }
+            else if (placa.Length != 7)
+            {
+                Console.WriteLine("Placa inválida! Deve conter 7 caracteres.");
+            }
+            else
+            {
+                string letras = placa.Substring(0, 3);
+                string numeros = placa.Substring(3, 4);
+                bool letrasValidas = letras.All(char.IsLetter);
+                bool numerosValidos = numeros.All(char.IsDigit);
+                if (letrasValidas && numerosValidos)
+                {
+                    Console.WriteLine("Placa válida!");
+                }
+                else
+                {
+                    Console.WriteLine("Placa inválida! Formato correto é ABC1234.");
+                }
+            }
+
+
+
+
         }
     }
 }
