@@ -1,14 +1,17 @@
-﻿namespace desafioNivel01
+﻿using System.Globalization;
+
+namespace desafioNivel01
 {
     class Program
     {
         static void Main(string[] args)
         {
-            boasVindas();
-            nomeCompleto();
-            cacular();
-            quantidadeCaracteres();
-            placaVeiculo();
+            //boasVindas();
+            //nomeCompleto();
+            //cacular();
+            //quantidadeCaracteres();
+            //placaVeiculo();
+            dataAtual();
 
 
 
@@ -90,10 +93,19 @@
                     Console.WriteLine("Placa inválida! Formato correto é ABC1234.");
                 }
             }
-
-
-
-
         }
+
+        public static void dataAtual()
+        {
+            DateOnly dataAtual = new DateOnly(2025,11,03);
+            Console.WriteLine(dataAtual.ToString("D", CultureInfo.CreateSpecificCulture("pt-br")));
+            Console.WriteLine(dataAtual.ToString("d", CultureInfo.CreateSpecificCulture("pt-br")));
+
+            var hora = TimeOnly.FromDateTime(DateTime.Now);
+            Console.WriteLine(hora.ToString("HH:mm"));
+
+            Console.WriteLine(dataAtual.ToString("d MMMM yyyy", CultureInfo.CreateSpecificCulture("pt-br")));
+        }
+
     }
 }
