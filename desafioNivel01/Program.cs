@@ -6,38 +6,37 @@ namespace desafioNivel01
     {
         static void Main(string[] args)
         {
-            //boasVindas();
-            //nomeCompleto();
-            //cacular();
-            //quantidadeCaracteres();
-            //placaVeiculo();
+            boasVindas();
+            nomeCompleto();
+            cacular();
+            quantidadeCaracteres();
+            placaVeiculo();
             dataAtual();
-
-
-
         }
 
         public static void boasVindas()
         {
-            Console.WriteLine("Boas Vindas\n");
+            Console.WriteLine("BOAS VINDAS\n");
             Console.WriteLine("Digite seu nome: ");
             string? nome = Console.ReadLine();
             Console.WriteLine("Olá, " + nome + "! Seja muito bem - vindo!");
+            Console.WriteLine();
         }
 
         public static void nomeCompleto()
         {
-            Console.WriteLine("Nome completo\n");
+            Console.WriteLine("NOME COMPLETO\n");
             Console.WriteLine("Digite seu nome: ");
             string? nome = Console.ReadLine();
             Console.WriteLine("Digite seu sobrenome: ");
             string? sobrenome = Console.ReadLine();
             Console.WriteLine("Seu nome completo é: " + nome + " " + sobrenome);
+            Console.WriteLine();
         }
 
         public static void cacular()
         {
-            Console.WriteLine("Cálculos matemáticos\n");
+            Console.WriteLine("CALCULOS MATEMÁTICOS\n");
             Console.WriteLine("Digite o primeiro valor: ");
             double valor1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Digite o segundo valor: ");
@@ -54,20 +53,22 @@ namespace desafioNivel01
             Console.WriteLine("Multiplicação: " + multiplicacao.ToString("F2"));
             Console.WriteLine("Divisão: " + divisao.ToString("F2"));
             Console.WriteLine("Média: " + media.ToString("F2"));
+            Console.WriteLine();
         }
 
         public static void quantidadeCaracteres()
         {
-            Console.WriteLine("Quantidade de acaracteres\n");
+            Console.WriteLine("QUANTIDADE DE CARACTERES NUMA FRASE\n");
             Console.WriteLine("Digite uma frase: ");
             string? frase = Console.ReadLine();
             int quantidade = frase.Length;
             Console.WriteLine("A frase digitada possui " + quantidade + " caracteres.");
+            Console.WriteLine();
         }
 
         public static void placaVeiculo()
         {
-            Console.WriteLine("Consulta Placa\n");
+            Console.WriteLine("CONSULTAR PLACA DE VEÍCULO\n");
             Console.WriteLine("Digite a placa do veículo (formato ABC1234): ");
             string? placa = Console.ReadLine()?.Trim();
             if(string.IsNullOrEmpty(placa))
@@ -87,6 +88,7 @@ namespace desafioNivel01
                 if (letrasValidas && numerosValidos)
                 {
                     Console.WriteLine("Placa válida!");
+                    Console.WriteLine();
                 }
                 else
                 {
@@ -98,6 +100,8 @@ namespace desafioNivel01
         public static void dataAtual()
         {
             DateOnly dataAtual = new DateOnly(2025,11,03);
+            Console.WriteLine("APRESENTAÇÃO DE DATA E HORA ATUAL");
+            Console.WriteLine();
             Console.WriteLine(dataAtual.ToString("D", CultureInfo.CreateSpecificCulture("pt-br")));
             Console.WriteLine(dataAtual.ToString("d", CultureInfo.CreateSpecificCulture("pt-br")));
 
